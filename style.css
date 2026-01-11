@@ -1,0 +1,106 @@
+:root {
+  /* --- HSL COLOR SYSTEM (Easy Edit) --- */
+  /* Main Red (The Butcher Red) - currently roughly #D32F2F */
+  --h-main: 354;
+  --s-main: 70%;
+  --l-main: 45%;
+
+  /* Neon Pop Red (For borders/hover) - currently #FF1744 */
+  --h-pop: 345;
+  --s-pop: 100%;
+  --l-pop: 54%;
+
+  /* Backgrounds */
+  --bg-off-white: #f8f8f8;
+  --bg-surface: #ffffff;
+
+  /* Generated Colors based on HSL */
+  --color-primary: hsl(var(--h-main), var(--s-main), var(--l-main));
+  --color-pop: hsl(var(--h-pop), var(--s-pop), var(--l-pop));
+
+  /* SHADOWS (Sharp/Hard for that 'Pop' effect) */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-sharp: 4px 4px 0px 0px var(--color-primary); /* The hard offset shadow */
+}
+
+body {
+  background-color: var(--bg-off-white);
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto Slab', serif;
+}
+
+/* --- CUSTOM COMPONENT CLASSES (Mixing Tailwind & Custom) --- */
+
+/* The Sharp Cards */
+.custom-card {
+  background: var(--bg-surface);
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-pop);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* The Main Star Card (Pork) */
+.card-highlight {
+  border: 2px solid var(--color-primary);
+  position: relative;
+}
+
+/* The Beef Card (Scarcity Mode) */
+.card-beef {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+}
+.card-beef h3,
+.card-beef p {
+  color: white;
+}
+.card-beef button {
+  border-color: white;
+  color: white;
+}
+.card-beef button:hover {
+  background: white;
+  color: black;
+}
+
+/* Buttons */
+.btn-main {
+  background-color: var(--color-primary);
+  color: white;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sharp); /* Hard shadow */
+}
+.btn-main:hover {
+  background-color: var(--color-pop);
+  transform: translate(2px, 2px); /* Button presses down */
+  box-shadow: 2px 2px 0px 0px var(--color-primary);
+}
+
+.btn-outline {
+  border: 2px solid #333;
+  color: #333;
+  transition: all 0.2s;
+}
+.btn-outline:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Step Numbers */
+.step-circle {
+  background-color: var(--color-primary);
+  color: white;
+}
