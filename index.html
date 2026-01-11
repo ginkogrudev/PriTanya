@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="bg" class="scroll-smooth">
   <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Default: Block everything (GDPR Compliant)
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+      });
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9VGJRZNM4V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-9VGJRZNM4V');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Месарница при Таня - Най-доброто месо в Ямбол</title>
@@ -348,6 +373,35 @@
         </div>
       </div>
     </section>
+
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-6 z-50 hidden shadow-2xl border-t border-gray-700"
+    >
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm text-gray-300">
+          <p class="font-bold text-white mb-1">🍪 Бисквитки и Поверителност</p>
+          <p>
+            Използваме бисквитки, за да анализираме трафика и да подобрим вашето преживяване. Съгласни ли сте да включим
+            проследяването?
+          </p>
+        </div>
+        <div class="flex gap-3 shrink-0">
+          <button
+            onclick="declineCookies()"
+            class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded font-bold transition"
+          >
+            Отказвам
+          </button>
+          <button
+            onclick="acceptCookies()"
+            class="px-6 py-2 bg-red-600 hover:bg-red-500 text-white rounded font-bold shadow-lg transition transform hover:-translate-y-0.5"
+          >
+            Приемам
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="bg-gray-900 text-white py-10 mt-10">
       <div class="max-w-6xl mx-auto px-4 flex flex-wrap gap-8">
