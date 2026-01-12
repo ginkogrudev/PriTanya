@@ -84,8 +84,10 @@
       </div>
     </header>
 
-    <section class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
-      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">Месарница При <span style="color: var(--color-primary)">Таня</span> Ямбол</h1>
+  <section class="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
+      <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4 text-gray-900">
+        Месарница <span style="color: var(--color-primary)">При Таня</span> Ямбол
+      </h1>
       <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
          Над 25 години на вашата трапеза!<br>
          Предлагаме само това, което бихме сложили на нашата маса.
@@ -99,16 +101,24 @@
         />
       </div>
 
-      <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        
         <a
           href="tel:+359899936646"
-          class="btn-main text-lg font-bold py-3 px-8 rounded flex justify-center items-center"
+          class="btn-main text-lg font-bold py-3 px-8 rounded flex justify-center items-center hover:bg-red-700 transition-colors"
+          style="border-bottom: none !important;"
         >
           <i class="fas fa-phone-alt mr-2"></i> Поръчай: 089 993 6646
         </a>
-        <a href="#order-form" class="btn-outline text-lg font-bold py-3 px-8 rounded flex justify-center items-center">
+
+        <a 
+          href="#order-form" 
+          class="btn-outline text-lg font-bold py-3 px-8 rounded flex justify-center items-center bg-white border-2 border-gray-300 hover:border-gray-800 transition-colors"
+          style="box-shadow: none !important;"
+        >
           Онлайн Заявка
         </a>
+
       </div>
     </section>
 
@@ -200,161 +210,213 @@
         </div>
       </div>
     </section>
-<section id="menu" class="py-16 bg-white">
-  <div class="max-w-4xl mx-auto px-4">
+
+
+<section id="products" class="py-16 bg-gray-50">
+  <div class="max-w-3xl mx-auto px-4">
     
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4 text-gray-900">Нашият Асортимент</h2>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Винаги прясно месо от <span class="font-bold text-gray-800">Хеликом</span> и млечни продукти от <span class="font-bold text-gray-800">Инзово и Ситос</span>.
-        Гарантирано качество от нас, Таня и [Partner Name].
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+        Нашият Асортимент
+      </h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        Ние не сме супермаркет. Ние сме <span class="text-red-600 font-bold">месарница</span>.
+        <br>
+        Предлагаме само най-доброто прясно месо в Ямбол вече повече от 25 години.
       </p>
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-6">
 
-      <details class="group bg-gray-50 rounded-lg border border-gray-200 open">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-          <div class="flex items-center gap-4">
-            <div class="bg-red-100 p-3 rounded-full text-red-600">
-              <i class="fas fa-drumstick-bite text-xl"></i> </div>
-            <h3 class="text-xl font-bold text-gray-900">Прясно Свинско Месо</h3>
+      <details class="group bg-white rounded-xl shadow-sm overflow-hidden open">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-red-50 transition border-l-8 border-red-800 bg-red-50/30">
+          <div class="flex items-center gap-5">
+            <div class="bg-red-100 w-12 h-12 flex items-center justify-center rounded-full text-red-800 text-xl">
+               <i class="fas fa-star"></i>
+            </div>
+            <div class="text-left">
+              <h3 class="text-2xl font-extrabold text-gray-900">Тайни Рецепти При Таня</h3>
+              <p class="text-sm font-medium text-red-700">Това са домашните рецепти предавани от поколение на поколение.</p>
+            </div>
           </div>
-          <span class="transform group-open:rotate-180 transition-transform duration-200">
-            <i class="fas fa-chevron-down text-gray-400"></i>
+          <span class="transform group-open:rotate-180 transition-transform duration-300 text-red-800 text-2xl">
+            <i class="fas fa-chevron-down"></i>
           </span>
         </summary>
-        <div class="px-6 pb-6 text-gray-600">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8">
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Свински Врат / Пържоли</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Свинска Плешка</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Свински Котлет</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Свински Гърди / Бекон</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1 font-bold text-red-600"><span>Кайма (смляна на място)</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Джулани / Бут</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Свинска Рибица</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1 text-sm text-gray-500"><span>Субпродукти: Глава, Крака, Уши, Дроб, Черва, Шкембе</span></div>
+        
+        <div class="px-6 pb-6 pt-4 border-l-8 border-red-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-white rounded-lg border border-red-100 shadow-sm">
+              <span class="font-bold text-gray-900 text-lg block mb-1">Домашна Наденица </span>
+              <span class="text-sm text-gray-600">Класическа. Перфектна за скара.</span>
+            </div>
+            <div class="p-4 bg-white rounded-lg border border-red-100 shadow-sm">
+              <span class="font-bold text-gray-900 text-lg block mb-1">Пикантна Наденица "При Таня"</span>
+              <span class="text-sm text-gray-600">Нашата тайна люта подправка. </span>
+            </div>
+             <div class="p-4 bg-white rounded-lg border border-red-100 shadow-sm">
+              <span class="font-bold text-gray-900 text-lg block mb-1">Филе "Елена"</span>
+              <span class="text-sm text-gray-600">Традиционно сушено филе.</span>
+            </div>
+             <div class="p-4 bg-white rounded-lg border border-red-100 shadow-sm">
+              <span class="font-bold text-gray-900 text-lg block mb-1">Свинска Рибица (За сушене)</span>
+              <span class="text-sm text-gray-600">Подготвена и овкусена.</span>
+            </div>
           </div>
         </div>
       </details>
 
-      <details class="group bg-gray-50 rounded-lg border border-gray-200">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-          <div class="flex items-center gap-4">
-            <div class="bg-red-100 p-3 rounded-full text-red-600">
-              <i class="fas fa-bacon text-xl"></i>
+      <details class="group bg-white rounded-xl shadow-md overflow-hidden ring-1 ring-red-200">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-red-50 transition border-l-8 border-red-600">
+          <div class="flex items-center gap-5">
+            <div class="bg-red-600 w-12 h-12 flex items-center justify-center rounded-full text-white text-xl shadow-lg">
+               <i class="fas fa-drumstick-bite"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900">Деликатеси и Сухи Мезета</h3>
+            <div class="text-left">
+              <h3 class="text-2xl font-extrabold text-gray-900">Свинско Месо</h3>
+              <p class="text-sm font-bold text-red-600 uppercase tracking-wide">Основен Асортимент</p>
+            </div>
           </div>
-          <span class="transform group-open:rotate-180 transition-transform duration-200">
-            <i class="fas fa-chevron-down text-gray-400"></i>
+          <span class="transform group-open:rotate-180 transition-transform duration-300 text-red-600 text-2xl">
+            <i class="fas fa-chevron-down"></i>
           </span>
         </summary>
-        <div class="px-6 pb-6 text-gray-600">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8">
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Филе "Елена"</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1 font-bold"><span>Филе "При Таня" (Специалитет)</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Рибици за сушене</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Луканки (Пресни и Сухи)</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Домашна Наденица</span></div>
-          </div>
+        
+        <div class="px-6 pb-6 pt-4 border-l-8 border-red-600 bg-white">
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8 text-lg">
+              <div class="flex flex-col border-b border-gray-100 pb-2">
+                <span class="font-bold text-gray-900">Вратни Пържоли / Котлет</span>
+                <span class="text-sm text-gray-500">№1 избор за <strong class="text-red-600">Скара</strong>.</span>
+              </div>
+              <div class="flex flex-col border-b border-gray-100 pb-2">
+                <span class="font-bold text-gray-900">Свински Ребра</span>
+                <span class="text-sm text-gray-500">За <strong class="text-red-600">Фурна</strong> или опушване.</span>
+              </div>
+               <div class="flex flex-col border-b border-gray-100 pb-2">
+                <span class="font-bold text-gray-900">Прясна Кайма (На място)</span>
+                <span class="text-sm text-gray-500">Мелим месото пред вас.</span>
+              </div>
+              <div class="flex flex-col border-b border-gray-100 pb-2">
+                <span class="font-bold text-gray-900">Гърди, Бекон, Плешка</span>
+                <span class="text-sm text-gray-500">За готвене и печене.</span>
+              </div>
+           </div>
+           <div class="mt-4 p-3 bg-red-50 rounded text-sm text-red-800 font-medium">
+             <i class="fas fa-check-circle mr-2"></i> Предлагаме и всички субпродукти: Глава, Крака, Уши, Дроб, Шкембе.
+           </div>
         </div>
       </details>
 
-      <details class="group bg-gray-50 rounded-lg border border-gray-200">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-          <div class="flex items-center gap-4">
-            <div class="bg-red-100 p-3 rounded-full text-red-600">
-              <i class="fas fa-cheese text-xl"></i>
+      <details class="group bg-white rounded-xl shadow-sm overflow-hidden">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-yellow-50 transition border-l-8 border-yellow-400">
+          <div class="flex items-center gap-5">
+            <div class="bg-yellow-100 w-12 h-12 flex items-center justify-center rounded-full text-yellow-600 text-xl">
+              <i class="fas fa-egg"></i>
             </div>
-            <h3 class="text-xl font-bold text-gray-900">Млечни и Други</h3>
+            <div class="text-left">
+              <h3 class="text-2xl font-bold text-gray-900">Пилешко Месо</h3>
+              <p class="text-sm text-gray-500">Българско производство.</p>
+            </div>
           </div>
-          <span class="transform group-open:rotate-180 transition-transform duration-200">
-            <i class="fas fa-chevron-down text-gray-400"></i>
+          <span class="transform group-open:rotate-180 transition-transform duration-300 text-gray-400 text-2xl">
+            <i class="fas fa-chevron-down"></i>
           </span>
         </summary>
-        <div class="px-6 pb-6 text-gray-600">
-          <p class="mb-4 text-sm text-gray-500 italic">Директни доставки от мандри с. Инзово и Ситос</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8">
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Сирене (Краве/Овче)</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Кашкавал</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Комплекти за пълнене на наденица</span></div>
-            <div class="flex justify-between border-b border-dotted border-gray-300 py-1"><span>Подправки</span></div>
+        <div class="px-6 pb-6 pt-4 border-l-8 border-yellow-400">
+            <div class="flex items-center gap-4">
+              <div class="text-4xl text-yellow-500"><i class="fas fa-utensils"></i></div>
+              <div>
+                <span class="font-bold text-gray-900 text-xl block">Цяло Пърлено Пиле</span>
+                <span class="text-sm text-gray-700">Без вода и добавки. Само цели пилета, перфектни за печене.</span>
+              </div>
+            </div>
+        </div>
+      </details>
+
+      <details class="group bg-gray-900 rounded-xl shadow-md overflow-hidden text-white">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-gray-800 transition border-l-8 border-gray-600">
+          <div class="flex items-center gap-5">
+            <div class="bg-gray-700 w-12 h-12 flex items-center justify-center rounded-full text-white text-xl">
+              <i class="fas fa-crown"></i>
+            </div>
+            <div class="text-left">
+              <h3 class="text-2xl font-bold text-white">Лимитирани и Сезонни</h3>
+              <p class="text-sm text-gray-400">Телешко и Агнешко. Само с предварителна заявка.</p>
+            </div>
           </div>
+          <span class="transform group-open:rotate-180 transition-transform duration-300 text-white text-2xl">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        
+        <div class="px-6 pb-6 pt-4 border-l-8 border-gray-600 bg-gray-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+               <h4 class="flex items-center gap-2 text-xl font-bold mb-3 text-red-200">
+                 <i class="fas fa-bull"></i> Телешко (Младо)
+               </h4>
+               <ul class="space-y-2 text-gray-300 text-sm">
+                 <li>• Телшки Шол</li>
+                 <li>• Телешки Бут</li>
+                  <li>• Телешка Плешка</li>
+                 <li>• Телешки Гърди/Ребърца</li>
+               </ul>
+            </div>
+            <div>
+               <h4 class="flex items-center gap-2 text-xl font-bold mb-3 text-green-200">
+                 <i class="fas fa-leaf"></i> Агнешко (Сезонно)
+               </h4>
+               <ul class="space-y-2 text-gray-300 text-sm">
+                 <li>• Цяло Агне / Половинка</li>
+                 <li>• Агнешки Бут</li>
+                 <li>• Агнешкa Плешка</li>
+                 <li>• Комплект дреболии</li>
+               </ul>
+            </div>
+          </div>
+       <a href="tel:0899936646" class="block w-full mt-6 bg-gray-800 hover:bg-gray-700 text-center p-4 rounded-lg border border-gray-600 hover:border-white transition-colors duration-300 text-gray-300 hover:text-white shadow-md group">
+  <i class="fas fa-phone-alt mr-2 text-red-500 group-hover:animate-pulse"></i> 
+  Обадете се за наличност: <span class="font-bold text-white">089 993 6646</span>
+</a>
+        </div>
+      </details>
+
+       <details class="group bg-white rounded-xl shadow-sm overflow-hidden">
+        <summary class="flex justify-between items-center p-5 cursor-pointer list-none hover:bg-blue-50 transition border-l-8 border-blue-400">
+          <div class="flex items-center gap-5">
+            <div class="bg-blue-100 w-12 h-12 flex items-center justify-center rounded-full text-blue-600 text-xl">
+              <i class="fas fa-cheese"></i>
+            </div>
+            <div class="text-left">
+              <h3 class="text-2xl font-bold text-gray-900">Млечни Продукти</h3>
+              <p class="text-sm text-gray-500">Директно от с.Ситово и с.Инзово.</p>
+            </div>
+          </div>
+          <span class="transform group-open:rotate-180 transition-transform duration-300 text-gray-400 text-2xl">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </summary>
+        <div class="px-6 pb-6 pt-4 border-l-8 border-blue-400">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+               <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                 <span class="block font-bold text-blue-900">Сирене</span>
+                 <span class="text-xs text-blue-700">Краве и Овче</span>
+               </div>
+               <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                 <span class="block font-bold text-blue-900">Кашкавал</span>
+                 <span class="text-xs text-blue-700">Домашен вкус</span>
+               </div>
+               <div class="p-3 bg-blue-50 rounded border border-blue-100">
+                 <span class="block font-bold text-blue-900">Масло & Мляко</span>
+                 <span class="text-xs text-blue-700">Истински</span>
+               </div>
+            </div>
         </div>
       </details>
 
     </div>
-
-    <div class="text-center mt-10">
-      <a href="#order-form" class="inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full hover:bg-red-700 transition shadow-lg transform hover:-translate-y-1">
-        ПОРЪЧАЙ СЕГА
-      </a>
-      <p class="mt-4 text-gray-500 text-sm">или ни посетете на място в ж.к. Хале</p>
-    </div>
-
   </div>
 </section>
-
-    <section class="bg-white py-16 border-t border-gray-200">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-serif font-bold text-center mb-10">Прясно Българско Месо От Доверни Местни Ферми</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="custom-card card-highlight p-6 rounded-lg">
-            <div class="absolute -top-3 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded">
-              ТОП ПРОДУКТ
-            </div>
-            <h3 class="text-xl font-bold mb-2">🐖 Свинско Месо</h3>
-            <p class="text-sm text-gray-600 mb-4">Толкова прясно, че прасето тичаше вчера.</p>
-            <ul class="text-sm space-y-2">
-              <li><i class="fas fa-check text-red-500 mr-2"></i>Прясно българско всеки ден</li>
-              <li><i class="fas fa-check text-red-500 mr-2"></i>Кайма която мелим на място</li>
-              <li><i class="fas fa-check text-red-500 mr-2"></i>Заявки за големи банкети 100кг+</li>
-            </ul>
-          </div>
-
-          <div class="custom-card p-6 rounded-lg">
-            <div class="absolute -top-3 right-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded">
-              СПЕЦИАЛИТЕТ
-            </div>
-            <h3 class="text-xl font-bold mb-2">🔥 Домашна Наденица</h3>
-            <p class="text-sm text-gray-600 mb-4">Рецепта, която няма да намерите другаде.</p>
-            <ul class="text-sm space-y-2">
-              <li><i class="fas fa-pepper-hot text-red-500 mr-2"></i>Люта (За ценители)</li>
-              <li><i class="fas fa-leaf text-green-500 mr-2"></i>Мека (Класика)</li>
-            </ul>
-          </div>
-
-          <div class="custom-card p-6 rounded-lg">
-            <h3 class="text-xl font-bold mb-2">🐓 Пилешко</h3>
-            <p class="text-sm text-gray-600 mb-4">Локално производство от ферми до 30км.</p>
-            <ul class="text-sm space-y-2">
-              <li><i class="fas fa-check text-red-500 mr-2"></i>Без вода</li>
-              <li><i class="fas fa-check text-red-500 mr-2"></i>Чисто българско</li>
-            </ul>
-          </div>
-
-          <div class="custom-card card-beef p-6 rounded-lg shadow-xl transform scale-105">
-            <h3 class="text-xl font-bold mb-2">🐂 Телешко</h3>
-            <p class="text-xs text-gray-300 mb-4 uppercase tracking-widest">Лимитирани количества</p>
-            <p class="text-sm mb-4">Рядко намираме телешко, което да покрива високите ни стандарти.</p>
-            <button
-              onclick="document.getElementById('order-notes').value='Искам да се запиша за ТЕЛЕШКО'; document.location='#order-form'"
-              class="w-full border-2 border-white text-white font-bold py-2 rounded hover:bg-white hover:text-black transition"
-            >
-              Чакащ Списък
-            </button>
-          </div>
-        </div>
-
-        <div class="mt-8 text-center bg-yellow-50 border border-yellow-200 p-4 rounded-lg max-w-2xl mx-auto">
-          <p class="text-yellow-800">
-            🐑 <strong>Агнешко:</strong> Само сезонно (Великден/Гергьовден) с предварителна заявка.
-          </p>
-        </div>
-      </div>
-    </section>
 
   <section id="order-form" class="py-16 bg-gray-50">
   <div class="max-w-2xl mx-auto px-4">
