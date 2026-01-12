@@ -28,26 +28,44 @@ window.addEventListener('load', function () {
   }
 });
 
-// 2. User Clicks "Accept" (Приемам)
+// Function to check if cookies are already accepted
+function checkCookies() {
+    if (localStorage.getItem("cookiesAccepted") === "true") {
+        // If they already accepted previously, update Google immediately
+        gtag('consent', 'update', {
+            'ad_storage': 'granted',
+            'analytics_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+        });
+        document.getElementById("cookie-banner").classList.add("hidden");
+    } else {
+        // Show banner if not accepted
+        document.getElementById("cookie-banner").classList.remove("hidden");
+    }
+}
+
+// User clicked "Приемам" (Accept)
 function acceptCookies() {
-  localStorage.setItem('cookieConsent', 'granted');
-  enableTracking();
-  document.getElementById('cookie-banner').classList.add('hidden');
+    localStorage.setItem("cookiesAccepted", "true");
+    
+    // Tell Google Analytics: "Start tracking now!"
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+    });
+    
+    document.getElementById("cookie-banner").classList.add("hidden");
 }
 
-// 3. User Clicks "Decline" (Отказвам)
+// User clicked "Отказвам" (Decline)
 function declineCookies() {
-  localStorage.setItem('cookieConsent', 'denied');
-  document.getElementById('cookie-banner').classList.add('hidden');
+    localStorage.setItem("cookiesAccepted", "false");
+    document.getElementById("cookie-banner").classList.add("hidden");
+    // We do NOT update consent, so it stays 'denied' (default)
 }
 
-// 4. The function that actually tells Google "GO"
-function enableTracking() {
-  gtag('consent', 'update', {
-    ad_storage: 'granted',
-    ad_user_data: 'granted',
-    ad_personalization: 'granted',
-    analytics_storage: 'granted',
-  });
-  console.log('Consent Granted - Tracking Enabled');
-}
+// Run check on load
+window.onload = checkCookies;
