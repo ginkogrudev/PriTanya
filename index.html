@@ -260,110 +260,79 @@
       </div>
     </section>
 
-    <section id="order-form" class="py-16 bg-gray-50">
-      <div class="max-w-2xl mx-auto px-4">
-        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4" style="border-color: var(--color-primary)">
-          <h2 class="text-2xl font-bold mb-2">Заявете вашата поръчка</h2>
-          <p class="text-gray-600 mb-6">Попълнете формата и ние ще получим данните веднага.</p>
+  <section id="order-form" class="py-16 bg-gray-50">
+  <div class="max-w-2xl mx-auto px-4">
+    <div class="bg-white p-8 rounded-lg shadow-lg border-t-4" style="border-color: var(--color-primary)">
+      
+      <h2 class="text-2xl font-bold mb-2">Заявете вашата поръчка</h2>
+      <p class="text-gray-600 mb-6">Попълнете формата и ние ще получим данните веднага.</p>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display: none" onload="if(submitted) {document.querySelector('.form-content').classList.add('hidden'); document.querySelector('.success-message').classList.remove('hidden');}"></iframe>
 
-          <script type="text/javascript">
-            var submitted = false;
-          </script>
-          <iframe
-            name="hidden_iframe"
-            id="hidden_iframe"
-            style="display: none"
-            onload="if(submitted) {document.querySelector('.form-content').classList.add('hidden'); document.querySelector('.success-message').classList.remove('hidden');}"
-          ></iframe>
-
-          <div class="success-message hidden text-center py-10">
-            <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
-            <h3 class="text-2xl font-bold mb-2">Поръчката е приета!</h3>
-            <p class="mb-6">Благодарим ви. Ще се свържем с вас за потвърждение.</p>
-            <button class="btn-outline py-2 px-6 rounded" onclick="location.reload()">Нова поръчка</button>
-          </div>
-
-          <div class="form-content">
-            <form
-              action="https://script.google.com/macros/s/AKfycbyEQz5FLv_i18tUYp7yRNesqn6qYxI9KUxkDMjHwKD4b5R1DtZEJToWBTOu7AiRV0x33g/exec"
-              method="POST"
-              target="hidden_iframe"
-              onsubmit="submitted=true;"
-              class="space-y-4"
-            >
-              <div>
-                <label class="block font-bold mb-1">Име</label>
-                <input
-                  type="text"
-                  name="entry.111111"
-                  required
-                  placeholder="Вашето име"
-                  class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"
-                />
-              </div>
-
-              <div>
-                <label class="block font-bold mb-1">Телефон</label>
-                <input
-                  type="tel"
-                  name="entry.222222"
-                  required
-                  placeholder="08XX XXX XXX"
-                  class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"
-                />
-              </div>
-
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <label class="block font-bold mb-1">Вид месо</label>
-                  <select
-                    name="entry.333333"
-                    class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"
-                  >
-                    <option value="Pork">Свинско</option>
-                    <option value="Chicken">Пилешко</option>
-                    <option value="Nadenica">Наденица</option>
-                    <option value="Beef">Телешко</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block font-bold mb-1">Количество</label>
-                  <select
-                    name="entry.444444"
-                    class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"
-                  >
-                    <option value="1kg">~ 1 кг</option>
-                    <option value="2-3kg">~ 2-3 кг</option>
-                    <option value="5kg+">~ 5+ кг</option>
-                    <option value="Big">Заведение</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label class="block font-bold mb-1">Бележки</label>
-                <textarea
-                  id="order-notes"
-                  name="entry.555555"
-                  rows="3"
-                  placeholder="Какво ще готвите?..."
-                  class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"
-                ></textarea>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <input type="checkbox" id="location-check" required class="mt-1 w-4 h-4 text-red-600" />
-                <label for="location-check" class="text-sm text-gray-600"
-                  >Разбирам, че трябва да взема поръчката от магазина в гр. Ямбол (ж.к. Хале).</label
-                >
-              </div>
-
-              <button type="submit" class="btn-main w-full py-3 font-bold text-lg rounded">ИЗПРАТИ ЗАЯВКА</button>
-            </form>
-          </div>
-        </div>
+      <div class="success-message hidden text-center py-10">
+        <i class="fas fa-check-circle text-6xl text-green-500 mb-4"></i>
+        <h3 class="text-2xl font-bold mb-2">Поръчката е приета!</h3>
+        <p class="mb-6">Благодарим ви. Ще се свържем с вас за потвърждение.</p>
+        <button class="btn-outline py-2 px-6 rounded" onclick="location.reload()">Нова поръчка</button>
       </div>
-    </section>
+
+      <div class="form-content">
+        <form 
+          action="https://script.google.com/macros/s/AKfycbyEQz5FLv_i18tUYp7yRNesqn6qYxI9KUxkDMjHwKD4b5R1DtZEJToWBTOu7AiRV0x33g/exec" 
+          method="POST" 
+          target="hidden_iframe" 
+          onsubmit="submitted=true;" 
+          class="space-y-4"
+        >
+          
+          <div>
+            <label class="block font-bold mb-1">Име</label>
+            <input type="text" name="name" required placeholder="Вашето име" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500" />
+          </div>
+
+          <div>
+            <label class="block font-bold mb-1">Телефон</label>
+            <input type="tel" name="phone" required placeholder="08XX XXX XXX" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block font-bold mb-1">Вид месо</label>
+              <select name="meat" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500">
+                <option value="Pork">Свинско</option>
+                <option value="Chicken">Пилешко</option>
+                <option value="Nadenica">Наденица</option>
+                <option value="Beef">Телешко</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold mb-1">Количество</label>
+              <select name="quantity" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500">
+                <option value="1kg">~ 1 кг</option>
+                <option value="2-3kg">~ 2-3 кг</option>
+                <option value="5kg+">~ 5+ кг</option>
+                <option value="Big">Заведение</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold mb-1">Бележки</label>
+            <textarea name="notes" rows="3" placeholder="Какво ще готвите?..." class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-red-500"></textarea>
+          </div>
+
+          <div class="bg-red-50 p-4 rounded border border-red-100 flex items-start gap-3">
+            <input type="checkbox" id="location-check" required class="mt-1.5 w-5 h-5 text-red-600 cursor-pointer" />
+            <label for="location-check" class="text-base font-red text-gray-800 cursor-pointer">
+              Разбирам, че трябва да взема поръчката от магазина в гр. Ямбол (ж.к. Хале).
+            </label>
+          </div>
+
+          <button type="submit" class="btn-main w-full py-3 font-bold text-lg rounded text-white" style="background-color: var(--color-primary)">ИЗПРАТИ ЗАЯВКА</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
     <div
       id="cookie-banner"
