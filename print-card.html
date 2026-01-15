@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПриТаня QR Картичка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        /* The Card Size (A6 or similar ratio) */
+        .card {
+            width: 105mm; /* Standard A6 width */
+            height: 148mm; /* Standard A6 height */
+            background-color: #1a1a1a; /* Dark Chalkboard Background */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #D50000; /* Red Border frame */
+            border-radius: 12px;
+        }
+
+        /* The Hook */
+        .headline {
+            font-family: 'Monstrat', cursive; /* Handwritten style for personal touch */
+            font-size: 2.5rem;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        /* The QR Code Container */
+        .qr-container {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            display: block;
+        }
+
+        /* The Branding (Bottom) */
+        .branding {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .brand-white {
+            color: #ffffff;
+        }
+
+        .brand-red {
+            color: #D50000; /* Your Signature Red */
+        }
+
+        .sub-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: none;
+                display: block;
+            }
+            .card {
+                box-shadow: none;
+                margin: 0 auto;
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact; /* Forces background colors to print */
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="headline">
+            Остави ни ревю<br>
+            <span style="color: #D50000;">ако се връщаш за още месо!</span>
+        </div>
+
+        <div class="qr-container">
+            <img src="QRCodeForReviews.png" alt="Scan for Reviews" class="qr-code">
+        </div>
+
+        <div class="branding">
+            <span class="brand-white">МЕСАРНИЦА</span><br>
+            <span class="brand-red">ПРИ ТАНЯ</span>
+        </div>
+
+        <div class="sub-text">Благодарим ви, че избрахте българското!</div>
+    </div>
+
+</body>
+</html>
