@@ -1,11 +1,11 @@
 :root {
-  /* --- HSL COLOR SYSTEM (Easy Edit) --- */
-  /* Main Red (The Butcher Red) - currently roughly #D32F2F */
+  /* --- HSL COLOR SYSTEM --- */
+  /* Main Red (The Butcher Red) */
   --h-main: 354;
   --s-main: 70%;
   --l-main: 45%;
 
-  /* Neon Pop Red (For borders/hover) - currently #FF1744 */
+  /* Neon Pop Red (For borders/hover) */
   --h-pop: 345;
   --s-pop: 100%;
   --l-pop: 54%;
@@ -14,7 +14,7 @@
   --bg-off-white: #f8f8f8;
   --bg-surface: #ffffff;
 
-  /* Generated Colors based on HSL */
+  /* Generated Colors */
   --color-primary: hsl(var(--h-main), var(--s-main), var(--l-main));
   --color-pop: hsl(var(--h-pop), var(--s-pop), var(--l-pop));
 
@@ -26,16 +26,14 @@
 body {
   background-color: var(--bg-off-white);
   font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased; /* Makes text sharper on iPhone */
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: 'Roboto Slab', serif;
 }
 
-/* --- CUSTOM COMPONENT CLASSES (Mixing Tailwind & Custom) --- */
+/* --- CUSTOM COMPONENTS --- */
 
 /* The Sharp Cards */
 .custom-card {
@@ -45,10 +43,13 @@ h4 {
   transition: all 0.2s ease-in-out;
 }
 
-.custom-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-pop);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+/* Hover only on Desktop to prevent stuck hover states on mobile */
+@media (hover: hover) {
+  .custom-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-pop);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* The Main Star Card (Pork) */
@@ -66,35 +67,46 @@ h4 {
 .card-beef h3,
 .card-beef p {
   color: white;
+  font-weight: 500; /* Bolder for readability on dark bg */
 }
 .card-beef button {
   border-color: white;
   color: white;
-}
-.card-beef button:hover {
-  background: white;
-  color: black;
 }
 
 /* Buttons */
 .btn-main {
   background-color: var(--color-primary);
   color: white;
-  transition: all 0.2s;
-  box-shadow: var(--shadow-sharp); /* Hard shadow */
+  transition: all 0.1s; /* Faster for touch response */
+  box-shadow: var(--shadow-sharp);
+  /* Prevent blue highlight on tap on Android */
+  -webkit-tap-highlight-color: transparent; 
+  user-select: none;
 }
-.btn-main:hover {
-  background-color: var(--color-pop);
+
+/* Desktop Hover */
+@media (hover: hover) {
+  .btn-main:hover {
+    background-color: var(--color-pop);
+    transform: translate(-1px, -1px); /* Slight lift */
+    box-shadow: 5px 5px 0px 0px var(--color-primary); /* Bigger shadow */
+  }
+}
+
+/* Mobile & Click Active State (The "Click" feel) */
+.btn-main:active {
   transform: translate(2px, 2px); /* Button presses down */
-  box-shadow: 2px 2px 0px 0px var(--color-primary);
+  box-shadow: 0px 0px 0px 0px var(--color-primary); /* Shadow disappears */
 }
 
 .btn-outline {
   border: 2px solid #333;
   color: #333;
   transition: all 0.2s;
+  background: white;
 }
-.btn-outline:hover {
+.btn-outline:active, .btn-outline:hover {
   background-color: #333;
   color: white;
 }
@@ -103,4 +115,30 @@ h4 {
 .step-circle {
   background-color: var(--color-primary);
   color: white;
+  font-weight: bold;
+}
+
+/* --- MOBILE SPECIFIC ADJUSTMENTS --- */
+@media (max-width: 640px) {
+  
+  /* Fix Headline Size on small screens */
+  h1 {
+    font-size: 2.25rem !important; /* Prevents overflow */
+    line-height: 1.2 !important;
+  }
+  
+  /* Make buttons full width on mobile for easier tapping */
+  .btn-main, .btn-outline {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem !important; /* Bigger touch target */
+  }
+
+  /* Adjust Card padding so it doesn't touch edges */
+  .custom-card {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
