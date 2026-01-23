@@ -1,4 +1,4 @@
-console.log('PriTanya Loaded - Ready for orders.');
+console.log('PriTanya Loaded - Call Only Mode.');
 
 // --- 1. SMOOTH SCROLLING ---
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -13,89 +13,56 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// --- 2. FORM SUBMISSION LOGIC (THE MISSING PIECE) ---
-// This watches for the form to send data to Google Sheets
-// and then swaps the Form for the "Success Message"
+// --- 2. COOKIE CONSENT LOGIC ---
+// Checks if user has already decided. If not, shows banner.
 
-var submitted = false; // Flag to track if we actually clicked submit
-
-document.addEventListener("DOMContentLoaded", function () {
-    const iframe = document.getElementById("hidden_iframe");
-    const formContent = document.querySelector(".form-content");
-    const successMessage = document.querySelector(".success-message");
-    const form = document.querySelector("form");
-
-    // A. Listen for the submit button click
-    if (form) {
-        form.addEventListener("submit", function () {
-            submitted = true;
-        });
-    }
-
-    // B. Listen for the invisible iframe to "load" (meaning data was sent)
-    if (iframe) {
-        iframe.addEventListener("load", function () {
-            if (submitted) {
-                // 1. Hide the form
-                if (formContent) formContent.classList.add("hidden");
-                
-                // 2. Show the success message
-                if (successMessage) {
-                    successMessage.classList.remove("hidden");
-                    
-                    // 3. Scroll user to the message so they see it
-                    successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
-                }
-                
-                // Reset flag
-                submitted = false; 
-            }
-        });
-    }
-});
-
-
-// --- 3. COOKIE CONSENT LOGIC (FIXED) ---
-// Unified to use "cookiesAccepted" everywhere so it doesn't break.
-
-// Run check on page load
 window.addEventListener('load', checkCookies);
 
 function checkCookies() {
-    // Check the 'cookiesAccepted' key in storage
-    if (localStorage.getItem("cookiesAccepted") === "true") {
-        // If accepted, enable Google Analytics
-        updateGtagConsent('granted');
-        document.getElementById("cookie-banner").classList.add("hidden");
+    // Check local storage
+    const status = localStorage.getItem("cookiesAccepted");
+
+    if (status === "true") {
+        // User previously accepted
+        hideBanner();
+        activateAnalytics('granted');
+    } else if (status === "false") {
+        // User previously declined
+        hideBanner();
+        activateAnalytics('denied');
     } else {
-        // If not found or denied, show banner
+        // New visitor: Show banner
         document.getElementById("cookie-banner").classList.remove("hidden");
-        // Ensure default is denied
-        updateGtagConsent('denied');
+        // Optional: Default to denied until click
+        activateAnalytics('denied');
     }
 }
 
-// User clicked "Приемам" (Accept)
 function acceptCookies() {
     localStorage.setItem("cookiesAccepted", "true");
-    updateGtagConsent('granted');
-    document.getElementById("cookie-banner").classList.add("hidden");
+    hideBanner();
+    activateAnalytics('granted');
 }
 
-// User clicked "Отказвам" (Decline)
 function declineCookies() {
     localStorage.setItem("cookiesAccepted", "false");
-    document.getElementById("cookie-banner").classList.add("hidden");
+    hideBanner();
+    activateAnalytics('denied');
 }
 
-// Helper function to update Google Analytics
-function updateGtagConsent(status) {
-    if (typeof gtag === 'function') {
-        gtag('consent', 'update', {
-            'ad_storage': status,
-            'analytics_storage': status,
-            'ad_user_data': status,
-            'ad_personalization': status
-        });
-    }
+function hideBanner() {
+    const banner = document.getElementById("cookie-banner");
+    if (banner) banner.classList.add("hidden");
+}
+
+// Helper to update GTM/Gtag consent
+function activateAnalytics(status) {
+    // Push the consent status to the Data Layer for GTM to read
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        'event': 'cookie_consent_update',
+        'consent_status': status
+    });
+    
+    console.log("GTM Consent Status updated to:", status);
 }
