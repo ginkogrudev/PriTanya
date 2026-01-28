@@ -46,9 +46,9 @@ h1, h2, h3, h4 {
 /* Hover only on Desktop to prevent stuck hover states on mobile */
 @media (hover: hover) {
   .custom-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--color-pop);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary); /* Turns Red on hover */
+    transform: translateY(-2px);
+    box-shadow: none !important;
   }
 }
 
@@ -78,19 +78,16 @@ h1, h2, h3, h4 {
 .btn-main {
   background-color: var(--color-primary);
   color: white;
-  transition: all 0.1s; /* Faster for touch response */
-  box-shadow: var(--shadow-sharp);
-  /* Prevent blue highlight on tap on Android */
-  -webkit-tap-highlight-color: transparent; 
-  user-select: none;
+  border: 2px solid var(--color-primary); /* Solid border */
+  box-shadow: none !important; /* Force removal of shadows */
 }
 
 /* Desktop Hover */
 @media (hover: hover) {
   .btn-main:hover {
-    background-color: var(--color-pop);
-    transform: translate(-1px, -1px); /* Slight lift */
-    box-shadow: 5px 5px 0px 0px var(--color-primary); /* Bigger shadow */
+    background-color: transparent; /* Transparent inside */
+    color: var(--color-primary); /* Red text */
+    transform: translateY(-2px); /* Simple lift, no shadow */
   }
 }
 
@@ -138,7 +135,8 @@ h1, h2, h3, h4 {
 
   /* Adjust Card padding so it doesn't touch edges */
   .custom-card {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
+  background: var(--bg-surface);
+  border: 2px solid #f3f4f6; /* Light gray border instead of shadow */
+  box-shadow: none !important;
+}
 }
